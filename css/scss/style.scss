@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+
+@import "mixins/breakpoints";
+
+@import "common/normalize";
+@import "common/variables";
+@import "common/nav";
+@import "common/footer";
+@import "common/contact-form";
+
+@import "helpers/helpers";
+
+html {
+  color: $text-color-dark;
+  font-size: 20px;
+  line-height: 32px;
+  font-family: "Mulish", sans-serif;
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: geometricPrecision;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "syncopatebold", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0 0 0 20px;
+    font-size: 16px;
+    line-height: 26px;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 13px;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      border-radius: 4px;
+      background: $text-color-dark;
+    }
+  }
+}
+
+body {
+}
+
+a {
+  color: $text-color-dark;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage {
+}

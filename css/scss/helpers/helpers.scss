@@ -1,0 +1,49 @@
+@import "../common/variables";
+@import "../mixins/breakpoints";
+
+.text-center {
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  @include breakpoint(medium) {
+    font-size: 40px;
+    margin-left: -2px;
+  }
+  @include breakpoint(large) {
+    margin-left: -5px;
+    font-size: 64px;
+  }
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  @include breakpoint(medium) {
+    line-height: 2;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../images/chevron.svg") calc(100% - 10px) center no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 9px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 30px 6px 10px;
+  margin-bottom: 20px;
+  min-width: 150px;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

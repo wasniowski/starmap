@@ -1,0 +1,24 @@
+{
+  "name": "Starmap",
+  "version": "1.0.0",
+  "description": "Starmap Website",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasniowski/starmap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wasniowski/starmap/issues"
+  },
+  "homepage": "https://github.com/wasniowski/starmap#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "./node_modules/.bin/sass --watch ./css/scss/style.scss ./css/style.css",
+    "serve": "./node_modules/.bin/browser-sync start --server --files 'index.php' 'css/*.css'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "prettier": "2.2.1",
+    "sass": "^1.32.8"
+  }
+}
