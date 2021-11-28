@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .title {
   font-size: 20px;
   line-height: 1.2;

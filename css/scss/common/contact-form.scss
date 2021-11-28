@@ -5,49 +5,99 @@
   form {
     position: relative;
     display: grid;
-    grid-template-areas: "name mail" "content content" "button .";
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-template-areas: "name mail" "content content" "button button";
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
 
     .user_name {
       grid-area: name;
+      position: relative;
     }
     .user_email {
       grid-area: mail;
+      position: relative;
     }
     .user_message {
       grid-area: content;
+      position: relative;
+    }
+
+    .line {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: $color-blue-primary;
+      z-index: 2;
+      transition: width 0.4s ease-in-out;
     }
 
     button {
       grid-area: button;
-      background: none;
+      align-self: start;
+      justify-self: start;
+      background: $color-blue-primary;
+      color: $color-white;
       border: 0;
-      padding: 0 15px;
       margin: 0;
-      width: 100%;
+      display: block;
       outline: none;
+      font-size: 16px;
+      line-height: 54px;
+      font-weight: 600;
+      padding: 0 50px;
+      font-family: "Inter", sans-serif;
 
       &:hover {
         cursor: pointer;
       }
     }
 
+    label {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
     input,
     textarea {
-      border: none;
-      background: $color-grey;
-      padding: 16px 24px;
+      padding: 10px 0;
       outline: none;
       width: 100%;
       color: $text-color-dark;
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 16px;
+      line-height: 20px;
       display: block;
+      border: none;
+      border-bottom: 1px solid $color-blue-secondary;
+      position: relative;
+      font-weight: 400;
+
+      &::placeholder {
+        color: $color-blue-secondary;
+        opacity: 1;
+      }
+
+      &:-ms-input-placeholder {
+        color: $color-blue-secondary;
+      }
+
+      &::-ms-input-placeholder {
+        color: $color-blue-secondary;
+      }
+
+      &:focus {
+        + .line {
+          width: 100%;
+        }
+      }
     }
 
     textarea {
-      height: 160px;
+      height: 80px;
     }
 
     &:before {
@@ -71,16 +121,9 @@
       }
     }
   }
-
-  .text-with-separator {
-    margin-left: 0;
-    @include breakpoint(medium) {
-      margin-left: 60px;
-      margin-top: 120px;
-    }
-  }
 }
 
+/*
 .form-dynamic-labels {
   .form-dynamic-label-item {
     position: relative;
@@ -119,3 +162,4 @@
   padding: 15px !important;
   border-radius: 5px;
 }
+*/

@@ -14,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "./node_modules/.bin/sass --watch ./css/scss/style.scss ./css/style.css",
-    "serve": "./node_modules/.bin/browser-sync start --server --files 'index.php' 'css/*.css'"
+    "serve": "./node_modules/.bin/browser-sync start --server --files './*.html' 'css/*.css'"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",

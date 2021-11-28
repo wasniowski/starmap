@@ -2,4 +2,46 @@
 @import "../common/variables";
 
 #footer {
+  .container {
+    padding: 40px 0 30px 0;
+    background: url("../images/footer-line.svg") center top repeat-x;
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 660px 160px 160px;
+      margin: 20px 0;
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 300px;
+      }
+
+      ul {
+        li {
+          margin: 0;
+          padding: 0;
+
+          &:before {
+            display: none;
+          }
+
+          a {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+
+            &:hover {
+              color: $color-blue-primary;
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 24px;
+    }
+  }
 }
