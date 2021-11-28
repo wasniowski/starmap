@@ -1,0 +1,157 @@
+@import "../mixins/breakpoints";
+@import "../common/variables";
+
+.offers {
+  #navigation {
+    .wrapper {
+      background: $color-white;
+    }
+  }
+
+  #offers {
+    h2.title-smaller + table {
+      border-top: 1px solid $color-black;
+    }
+  }
+}
+
+#offers {
+  background: $color-background-gray;
+  padding: 110px 0;
+
+  h2.title {
+    margin-right: 40%;
+    margin-bottom: 60px;
+
+    strong {
+      font-weight: normal;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-image: url("../images/offers-underline.svg");
+        background-size: 100% auto;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        pointer-events: none;
+      }
+    }
+  }
+
+  h2.title-smaller {
+    margin-bottom: 30px;
+  }
+
+  .offers-table {
+    width: 100%;
+    margin-bottom: 80px;
+
+    th {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      padding: 0 10px 16px 10px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: $color-blue-secondary;
+      border-bottom: 1px solid $color-black;
+
+      &:first-of-type {
+        padding: 0 10px 16px 0;
+      }
+
+      &:last-of-type {
+        padding: 0 0 16px 10px;
+      }
+    }
+
+    td {
+      padding: 25px 10px;
+      border-bottom: 1px solid $color-black;
+      font-size: 20px;
+      line-height: 24px;
+      height: 110px;
+
+      &:first-of-type {
+        padding: 25px 10px 25px 0;
+      }
+
+      &.id {
+        width: 60px;
+        color: $color-blue-primary;
+      }
+
+      &.company {
+        width: 200px;
+      }
+
+      &.field {
+        width: 140px;
+      }
+
+      &.deadline {
+        width: 140px;
+      }
+
+      &.details {
+        width: 320px;
+      }
+
+      &.action {
+        width: 140px;
+
+        a {
+          display: block;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20px;
+          text-align: center;
+          padding: 18px 0;
+          color: $color-blue-primary;
+          border: 2px solid $color-blue-primary;
+        }
+      }
+
+      &:last-of-type {
+        padding: 25px 0 25px 10px;
+      }
+    }
+  }
+
+  .show-more {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: -30px;
+      width: 16px;
+      height: 15px;
+      background: url("../images/arrow-right.svg") center center no-repeat;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: calc(50% - 36px);
+      left: calc(50% - 105px);
+      width: 232px;
+      height: 66px;
+      background: url("../images/offers-show-more.svg") center center no-repeat;
+      pointer-events: none;
+    }
+  }
+}

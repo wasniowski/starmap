@@ -10,6 +10,9 @@
 
 @import "helpers/helpers";
 
+@import "pages/offers";
+@import "pages/offer";
+
 html {
   color: $text-color-dark;
   font-size: 20px;
@@ -26,19 +29,12 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+ul,
+li {
   text-rendering: geometricPrecision;
   margin: 0;
   padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "syncopatebold", sans-serif;
 }
 
 ul {
@@ -73,7 +69,6 @@ body {
 a {
   color: $text-color-dark;
   text-decoration: none;
-  font-weight: 600;
 }
 
 p {
@@ -374,167 +369,52 @@ p {
     }
   }
 
-  #offers {
-    background: $color-background-gray;
-    padding: 110px 0;
+}
+
+#contact-form {
+  padding: 110px 0;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .text {
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 215px;
+      right: 300px;
+      width: 451px;
+      height: 194px;
+      background: url("../images/contact-arrow.svg") center center no-repeat;
+    }
 
     h2 {
       font-size: 48px;
       font-weight: 400;
-      line-height: 72px;
-      margin-right: 40%;
+      line-height: 56px;
+      margin-right: 20%;
       margin-bottom: 60px;
-
-      strong {
-        font-weight: normal;
-        position: relative;
-
-        &:after {
-          content: "";
-          display: block;
-          position: absolute;
-          bottom: -5px;
-          left: 0;
-          right: 0;
-          top: 0;
-          background-image: url("../images/offers-underline.svg");
-          background-size: 100% auto;
-          background-position: center bottom;
-          background-repeat: no-repeat;
-          pointer-events: none;
-        }
-      }
-    }
-
-    .offers-table {
-      width: 100%;
-      margin-bottom: 80px;
-
-      th {
-        text-align: left;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 16px;
-        padding: 0 10px 16px 10px;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: $color-blue-secondary;
-        border-bottom: 1px solid $color-black;
-
-        &:first-of-type {
-          padding: 0 10px 16px 0;
-        }
-
-        &:last-of-type {
-          padding: 0 0 16px 10px;
-        }
-      }
-
-      td {
-        padding: 25px 10px;
-        border-bottom: 1px solid $color-black;
-
-        &.id {
-          width: 60px;
-          padding: 25px 10px 25px 0;
-          color: $color-blue-primary;
-        }
-
-        &.action {
-          width: 140px;
-          padding: 25px 0 25px 10px;
-
-          a {
-            display: block;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 20px;
-            text-align: center;
-            padding: 18px 0;
-            color: $color-blue-primary;
-            border: 2px solid $color-blue-primary;
-          }
-        }
-      }
-    }
-
-    .show-more {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 23px;
-      position: relative;
-
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 4px;
-        right: -30px;
-        width: 16px;
-        height: 15px;
-        background: url("../images/arrow-right.svg") center center no-repeat;
-      }
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: calc(50% - 36px);
-        left: calc(50% - 105px);
-        width: 232px;
-        height: 66px;
-        background: url("../images/offers-show-more.svg") center center
-          no-repeat;
-        pointer-events: none;
-      }
     }
   }
 
-  #contact-form {
-    padding: 110px 0;
-
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+  .contact {
+    .form {
+      margin: 130px 0 60px 0;
     }
 
-    .text {
-      position: relative;
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 215px;
-        right: 300px;
-        width: 451px;
-        height: 194px;
-        background: url("../images/contact-arrow.svg") center center no-repeat;
-      }
-
-      h2 {
-        font-size: 48px;
-        font-weight: 400;
-        line-height: 56px;
-        margin-right: 20%;
-        margin-bottom: 60px;
-      }
+    p, a {
+      font-size: 28px;
+      line-height: 46px;
     }
 
-    .contact {
-      .form {
-        margin: 130px 0 60px 0;
-      }
-
-      p, a {
-        font-size: 28px;
-        line-height: 46px;
-      }
-
-      a {
-        font-weight: 400;
-        color: $color-blue-primary;
-      }
+    a {
+      font-weight: 400;
+      color: $color-blue-primary;
     }
   }
 }

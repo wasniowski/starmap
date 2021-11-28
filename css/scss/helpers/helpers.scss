@@ -12,17 +12,63 @@
 }
 
 .title {
-  font-size: 20px;
-  line-height: 1.2;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  @include breakpoint(medium) {
-    font-size: 40px;
-    margin-left: -2px;
-  }
-  @include breakpoint(large) {
-    margin-left: -5px;
-    font-size: 64px;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 72px;
+  margin-left: -3px;
+
+  //font-size: 20px;
+  //line-height: 1.2;
+  //text-transform: uppercase;
+  //margin-bottom: 10px;
+  //@include breakpoint(medium) {
+  //  font-size: 40px;
+  //  margin-left: -2px;
+  //}
+  //@include breakpoint(large) {
+  //  margin-left: -5px;
+  //  font-size: 64px;
+  //}
+}
+
+.title-smaller {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 72px;
+  margin-left: -2px;
+}
+
+.btn {
+  display: block;
+  background: $color-blue-primary;
+  color: $text-color-light;
+  font-size: 16px;
+  line-height: 60px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.btn-outline {
+
+}
+
+.back {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  padding-left: 30px;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 14px;
+    background: url("../images/arrow-left.svg") center center no-repeat;
   }
 }
 
