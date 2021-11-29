@@ -1248,6 +1248,118 @@ select:hover {
   margin-bottom: 20px;
 }
 
+.about-us #top {
+  background: #EBEBEB;
+  position: relative;
+  padding: 110px 0 0 0;
+}
+.about-us #top:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: #ffffff;
+}
+.about-us #top .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+}
+.about-us #top .wrapper .text {
+  padding-right: 100px;
+}
+.about-us #top .wrapper .text h2 {
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 96px;
+  margin-left: -3px;
+  margin-bottom: 20px;
+}
+.about-us #top .wrapper .text h4 {
+  font-size: 48px;
+  line-height: 72px;
+  font-weight: 400;
+  margin-left: -2px;
+  margin-bottom: 20px;
+}
+.about-us #top .wrapper .text p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.about-us #top .wrapper .image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+.about-us #top .wrapper .image-wrapper .image-mask {
+  overflow: hidden;
+  position: relative;
+}
+.about-us #top .wrapper .image-wrapper .image-mask:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -185px;
+  left: -100px;
+  width: 200%;
+  height: 200px;
+  background: #ffffff;
+  transform: rotate(5deg);
+}
+.about-us #about-us {
+  padding: 60px 0 0 0;
+}
+.about-us #about-us .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 60px;
+}
+.about-us #about-us h2.title {
+  margin-bottom: 60px;
+}
+.about-us #about-us article {
+  background: url("../images/about-us-line.svg") left bottom no-repeat;
+  padding-bottom: 20px;
+}
+.about-us #about-us article img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.about-us #about-us article h4 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+.about-us #about-us article h5 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1F5DFE;
+  margin-bottom: 20px;
+}
+.about-us #about-us article p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.about-us #about-us article p.contact {
+  margin-top: 20px;
+}
+.about-us #about-us article p.contact:last-of-type {
+  margin-top: 0;
+}
+.about-us #about-us article p.contact span {
+  font-size: 12px;
+  line-height: 24px;
+  color: #1F5DFE;
+  text-transform: uppercase;
+  display: inline-block;
+  min-width: 60px;
+}
+
 html {
   color: #191b1d;
   font-size: 20px;
