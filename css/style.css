@@ -1360,6 +1360,67 @@ select:hover {
   min-width: 60px;
 }
 
+.references #top {
+  background: #EBEBEB;
+  position: relative;
+  padding: 60px 0 110px 0;
+}
+.references #top:before {
+  content: "";
+  display: block;
+  width: 633px;
+  height: 416px;
+  background: url("../images/references-line.svg") center center no-repeat;
+  position: absolute;
+  top: -120px;
+  left: calc(50% + 100px);
+  pointer-events: none;
+}
+.references #top .title {
+  padding-right: 50%;
+  margin-bottom: 70px;
+}
+.references #top .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.references #top .wrapper p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.references #top .wrapper p.subtitle {
+  margin-bottom: 40px;
+}
+.references #top .wrapper h4 {
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 24px;
+}
+.references #top .wrapper article {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  grid-column-gap: 16px;
+  margin-bottom: 40px;
+}
+.references #top .wrapper .col:first-of-type article {
+  max-width: 260px;
+  min-height: 48px;
+}
+.references #top .wrapper .inner-wrapper {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+}
+.references #top .wrapper .inner-wrapper article {
+  max-width: 260px;
+  margin: 0;
+}
+.references #top .wrapper .inner-wrapper article h4 {
+  margin-bottom: 8px;
+}
+
 html {
   color: #191b1d;
   font-size: 20px;
@@ -1367,6 +1428,7 @@ html {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
+  overflow-x: hidden;
 }
 
 a,
