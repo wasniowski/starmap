@@ -944,6 +944,34 @@ h3 {
   padding: 0 24px;
 }
 
+.show-more {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  position: relative;
+}
+.show-more:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: -30px;
+  width: 16px;
+  height: 15px;
+  background: url("../images/arrow-right.svg") center center no-repeat;
+}
+.show-more:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 36px);
+  left: calc(50% - 105px);
+  width: 232px;
+  height: 66px;
+  background: url("../images/offers-show-more.svg") center center no-repeat;
+  pointer-events: none;
+}
+
 .back {
   font-size: 18px;
   font-weight: 600;
@@ -1089,33 +1117,6 @@ select:hover {
 }
 #offers .offers-table td:last-of-type {
   padding: 25px 0 25px 10px;
-}
-#offers .show-more {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 23px;
-  position: relative;
-}
-#offers .show-more:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px;
-  right: -30px;
-  width: 16px;
-  height: 15px;
-  background: url("../images/arrow-right.svg") center center no-repeat;
-}
-#offers .show-more:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: calc(50% - 36px);
-  left: calc(50% - 105px);
-  width: 232px;
-  height: 66px;
-  background: url("../images/offers-show-more.svg") center center no-repeat;
-  pointer-events: none;
 }
 
 .offer #navigation .wrapper {
@@ -1420,6 +1421,81 @@ select:hover {
 .references #top .wrapper .inner-wrapper article h4 {
   margin-bottom: 8px;
 }
+.references #single-reference {
+  padding: 80px 0;
+}
+.references #single-reference .title {
+  padding-right: 40%;
+  margin-bottom: 24px;
+}
+.references #single-reference .wrapper {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+.references #single-reference .wrapper .person {
+  padding: 60px 0;
+  background-image: linear-gradient(90deg, #ffffff 50%, #EBEBEB 50%);
+}
+.references #single-reference .wrapper .person .company-logo,
+.references #single-reference .wrapper .person .image {
+  margin-bottom: 10px;
+}
+.references #single-reference .wrapper .person h4 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+.references #single-reference .wrapper .person p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #838FAC;
+}
+.references #single-reference .wrapper .content {
+  background: #EBEBEB;
+  column-count: 2;
+  column-gap: 70px;
+  padding: 60px 100px 60px 0;
+}
+.references #single-reference .wrapper .content p {
+  font-size: 14px;
+  line-height: 24px;
+}
+.references #testimonials {
+  padding-bottom: 110px;
+}
+.references #testimonials .wrapper {
+  grid-row-gap: 110px;
+}
+.references #testimonials .align-center {
+  margin-top: 80px;
+}
+.references #clients {
+  background: #EBEBEB;
+  padding: 90px 0 120px 0;
+}
+.references #clients .title {
+  margin-bottom: 24px;
+}
+.references #clients .wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+}
+.references #clients .wrapper article {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+.references #clients .wrapper article img {
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+}
 
 html {
   color: #191b1d;
@@ -1678,42 +1754,43 @@ p {
   margin-right: 40%;
   margin-bottom: 60px;
 }
-.homepage #testimonials .wrapper {
+
+#testimonials .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.homepage #testimonials .wrapper article .logo {
+#testimonials .wrapper article .logo {
   height: 50px;
   margin-bottom: 12px;
   display: flex;
   align-items: center;
 }
-.homepage #testimonials .wrapper article .logo img {
+#testimonials .wrapper article .logo img {
   width: auto;
   max-height: 50px;
 }
-.homepage #testimonials .wrapper article p {
+#testimonials .wrapper article p {
   font-size: 14px;
   line-height: 24px;
   margin-right: 27%;
 }
-.homepage #testimonials .wrapper article .person {
+#testimonials .wrapper article .person {
   margin-top: 32px;
   display: grid;
   grid-template-columns: 60px 1fr;
   grid-column-gap: 16px;
 }
-.homepage #testimonials .wrapper article .person .image img {
+#testimonials .wrapper article .person .image img {
   width: 60px;
   height: auto;
 }
-.homepage #testimonials .wrapper article .person .description .name {
+#testimonials .wrapper article .person .description .name {
   font-size: 18px;
   font-weight: 500;
   line-height: 18px;
   margin-bottom: 5px;
 }
-.homepage #testimonials .wrapper article .person .description .role {
+#testimonials .wrapper article .person .description .role {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
