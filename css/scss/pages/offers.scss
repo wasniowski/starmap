@@ -17,11 +17,18 @@
 
 #offers {
   background: $color-background-gray;
-  padding: 110px 0;
+  padding: 60px 0;
+  @include breakpoint(medium) {
+    padding: 110px 0;
+  }
 
   h2.title {
-    margin-right: 40%;
-    margin-bottom: 60px;
+    margin-right: 20%;
+    margin-bottom: 30px;
+    @include breakpoint(medium) {
+      margin-right: 40%;
+      margin-bottom: 60px;
+    }
 
     strong {
       font-weight: normal;
@@ -36,7 +43,6 @@
         right: 0;
         top: 0;
         background-image: url("../images/offers-underline.svg");
-        background-size: 100% auto;
         background-position: center bottom;
         background-repeat: no-repeat;
         pointer-events: none;
@@ -48,79 +54,124 @@
     margin-bottom: 30px;
   }
 
-  .offers-table {
-    width: 100%;
-    margin-bottom: 80px;
-
-    th {
-      text-align: left;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 16px;
-      padding: 0 10px 16px 10px;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: $color-blue-secondary;
-      border-bottom: 1px solid $color-black;
-
-      &:first-of-type {
-        padding: 0 10px 16px 0;
-      }
-
-      &:last-of-type {
-        padding: 0 0 16px 10px;
-      }
+  .table-header,
+  .table-row {
+    display: grid;
+    border-bottom: 1px solid $color-black;
+    grid-template-areas: "position position" "deadline company" "details details" "action action";
+    grid-template-columns: 120px 1fr;
+    @include breakpoint(small) {}
+    @include breakpoint(medium) {
+      grid-template-columns: 300px 120px 150px 270px 120px;
+      grid-template-areas: "position deadline company details action";
+    }
+    @include breakpoint(large) {
+      grid-template-columns: 400px 140px 200px 330px 130px;
     }
 
-    td {
-      padding: 25px 10px;
-      border-bottom: 1px solid $color-black;
-      font-size: 20px;
-      line-height: 24px;
-      height: 110px;
+    div {
+      display: flex;
+      align-items: center;
 
-      &:first-of-type {
-        padding: 25px 10px 25px 0;
-      }
-
-      &.id {
-        width: 60px;
-        color: $color-blue-primary;
-      }
-
-      &.company {
-        width: 200px;
-      }
-
-      &.field {
-        width: 140px;
+      &.position {
+        grid-area: position;
       }
 
       &.deadline {
-        width: 140px;
+        grid-area: deadline;
+      }
+
+      &.company {
+        grid-area: company;
       }
 
       &.details {
-        width: 320px;
+        grid-area: details;
       }
 
       &.action {
-        width: 140px;
+        grid-area: action;
+        padding-right: 0;
+      }
+    }
+  }
 
-        a {
-          display: block;
-          font-size: 16px;
-          font-weight: 600;
-          line-height: 20px;
-          text-align: center;
-          padding: 18px 0;
-          color: $color-blue-primary;
-          border: 2px solid $color-blue-primary;
+  .table-header {
+    div {
+      display: none;
+      @include breakpoint(medium) {
+        display: block;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500;
+        padding: 0 10px 16px 0;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: $color-blue-secondary;
+      }
+    }
+  }
+
+  .table-row {
+    padding: 24px 0;
+    @include breakpoint(medium) {
+      padding: 0;
+    }
+
+    div {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-right: 0;
+
+      @include breakpoint(medium) {
+        flex-direction: row;
+        align-items: center;
+        min-height: 110px;
+        padding-right: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      span {
+        display: block;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        color: $color-blue-primary;
+        @include breakpoint(medium) {
+          display: none;
         }
       }
 
-      &:last-of-type {
-        padding: 25px 0 25px 10px;
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        overflow-wrap: anywhere;
+        @include breakpoint(medium) {
+          margin-bottom: 0;
+        }
+        @include breakpoint(large) {
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+
+      &.position {
+        p {
+          font-size: 20px;
+          line-height: 28px;
+          @include breakpoint(medium) {
+            font-size: 16px;
+            line-height: 24px;
+          }
+          @include breakpoint(large) {
+            font-size: 20px;
+            line-height: 28px;
+          }
+        }
       }
     }
   }

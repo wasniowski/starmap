@@ -5,9 +5,12 @@
   form {
     position: relative;
     display: grid;
-    grid-template-areas: "name mail" "content content" "button button";
+    grid-template-areas: "name" "mail" "content" "button";
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+    @include breakpoint(small) {
+      grid-template-areas: "name mail" "content content" "button button";
+    }
 
     .user_name {
       grid-area: name;
@@ -36,7 +39,6 @@
     button {
       grid-area: button;
       align-self: start;
-      justify-self: start;
       background: $color-blue-primary;
       color: $color-white;
       border: 0;
@@ -48,6 +50,9 @@
       font-weight: 600;
       padding: 0 50px;
       font-family: "Inter", sans-serif;
+      @include breakpoint(small) {
+        justify-self: start;
+      }
 
       &:hover {
         cursor: pointer;
@@ -74,6 +79,7 @@
       border: none;
       border-bottom: 1px solid $color-blue-secondary;
       position: relative;
+      border-radius: 0;
       font-weight: 400;
 
       &::placeholder {
