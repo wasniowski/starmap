@@ -1,0 +1,88 @@
+@import "../mixins/breakpoints";
+@import "../common/variables";
+
+.text {
+  #text {
+    background: $color-background-gray;
+    position: relative;
+
+    &:before {
+      @include breakpoint(medium) {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 160px);
+        right: 0;
+        background: $color-white;
+      }
+      @include breakpoint(large) {
+        left: calc(50% - 130px);
+      }
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: "nav" "content";
+      @include breakpoint(medium) {
+        grid-template-columns: 320px 1fr;
+        grid-template-areas: "nav content";
+      }
+      @include breakpoint(large) {
+        grid-template-columns: 470px 1fr;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+
+      .page-nav {
+        grid-area: nav;
+        display: none;
+        @include breakpoint(medium) {
+          display: block;
+          padding: 60px 60px 60px 0;
+        }
+
+        ul {
+          li {
+            margin: 0 0 12px 0;
+            padding: 0;
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .page-content {
+        grid-area: content;
+        position: relative;
+        z-index: 2;
+        background: $color-white;
+        margin: 0 -25px;
+        padding: 40px 25px;
+        @include breakpoint(small) {
+          margin: unset;
+        }
+        @include breakpoint(medium) {
+          padding: 60px 0 60px 60px;
+        }
+        @include breakpoint(large) {
+          padding: 60px 0 60px 100px;
+        }
+      }
+    }
+  }
+}
+

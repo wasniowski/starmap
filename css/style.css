@@ -2071,6 +2071,94 @@ select:hover {
   max-height: 80%;
 }
 
+.text #text {
+  background: #EBEBEB;
+  position: relative;
+}
+@media only screen and (min-width: 992px) {
+  .text #text:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 160px);
+    right: 0;
+    background: #ffffff;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .text #text:before {
+    left: calc(50% - 130px);
+  }
+}
+.text #text .wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "content";
+}
+@media only screen and (min-width: 992px) {
+  .text #text .wrapper {
+    grid-template-columns: 320px 1fr;
+    grid-template-areas: "nav content";
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .text #text .wrapper {
+    grid-template-columns: 470px 1fr;
+  }
+}
+.text #text .wrapper h1, .text #text .wrapper h2, .text #text .wrapper h3, .text #text .wrapper h4, .text #text .wrapper h5, .text #text .wrapper h6 {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.text #text .wrapper p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+.text #text .wrapper .page-nav {
+  grid-area: nav;
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .text #text .wrapper .page-nav {
+    display: block;
+    padding: 60px 60px 60px 0;
+  }
+}
+.text #text .wrapper .page-nav ul li {
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+.text #text .wrapper .page-nav ul li:before {
+  display: none;
+}
+.text #text .wrapper .page-content {
+  grid-area: content;
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  margin: 0 -25px;
+  padding: 40px 25px;
+}
+@media only screen and (min-width: 768px) {
+  .text #text .wrapper .page-content {
+    margin: unset;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .text #text .wrapper .page-content {
+    padding: 60px 0 60px 60px;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .text #text .wrapper .page-content {
+    padding: 60px 0 60px 100px;
+  }
+}
+
 html {
   color: #191b1d;
   font-size: 20px;
@@ -2121,6 +2209,9 @@ ul li:before {
 a {
   color: #191b1d;
   text-decoration: none;
+}
+a:hover {
+  color: #1F5DFE;
 }
 
 p {
