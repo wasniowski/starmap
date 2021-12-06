@@ -17,27 +17,43 @@
     position: relative;
 
     &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: calc(50% - 130px);
-      right: 0;
-      background: $color-white;
+      @include breakpoint(medium) {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 160px);
+        right: 0;
+        background: $color-white;
+      }
+      @include breakpoint(large) {
+        left: calc(50% - 130px);
+      }
     }
 
     .link {
-      padding: 40px 0;
+      display: none;
+      @include breakpoint(medium) {
+        display: block;
+        padding: 40px 0;
+      }
     }
 
     .wrapper {
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 470px 1fr;
-      grid-template-rows: auto auto 1fr;
-      grid-template-areas: "otitle ocontent" "operson ocontent" "obutton ocontent";
+      grid-template-columns: 1fr;
+      grid-template-areas: "otitle" "ocontent" "operson" "obutton";
+      @include breakpoint(medium) {
+        grid-template-columns: 320px 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas: "otitle ocontent" "operson ocontent" "obutton ocontent";
+      }
+      @include breakpoint(large) {
+        grid-template-columns: 470px 1fr;
+      }
 
       .offer-title {
         grid-area: otitle;
@@ -49,18 +65,31 @@
           margin-bottom: 10px;
         }
 
-        h4 {
-          font-size: 40px;
-          font-weight: 400;
-          line-height: 54px;
+        .title-smaller {
+          margin-bottom: 24px;
+          @include breakpoint(medium) {
+            margin-bottom: 0;
+          }
         }
       }
 
       .offer-person {
         grid-area: operson;
-        background: url("../images/offer-line.svg") left top no-repeat;
-        margin-top: 60px;
-        padding-top: 20px;
+        margin: 0 -25px;
+        padding: 25px;
+        background-color: $color-white;background-color: $color-white;
+        background-image: url("../images/offer-line.svg");
+        background-position: 25px top;
+        background-repeat: no-repeat;
+        @include breakpoint(small) {
+          margin: unset;
+        }
+        @include breakpoint(medium) {
+          margin: 60px 0 0 0;
+          padding: 20px 0 0 0;
+          background-position: left top;
+          background-color: transparent;
+        }
 
         p {
           font-size: 14px;
@@ -105,19 +134,52 @@
 
       .offer-apply-button {
         grid-area: obutton;
-        margin-top: 30px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 25px;
+        background: $color-background-gray;
+        z-index: 10;
+
+        .btn {
+          max-width: 720px;
+          margin: 0 auto;
+        }
+
+        @include breakpoint(medium) {
+          margin-top: 30px;
+          position: unset;
+          padding: unset;
+          background: unset;
+        }
       }
 
       .offer-title,
       .offer-person,
       .offer-apply-button {
-        padding-right: 160px;
+        @include breakpoint(medium) {
+          padding-right: 60px;
+        }
+        @include breakpoint(large) {
+          padding-right: 160px;
+        }
       }
 
       .offer-content {
         grid-area: ocontent;
-        padding-left: 100px;
-        padding-bottom: 110px;
+        background: $color-white;
+        margin: 0 -25px;
+        padding: 40px 25px;
+        @include breakpoint(small) {
+          margin: unset;
+        }
+        @include breakpoint(medium) {
+          padding: 0 0 110px 60px;
+        }
+        @include breakpoint(large) {
+          padding: 0 0 110px 100px;
+        }
 
         .logo {
           margin-bottom: 20px;
@@ -149,7 +211,10 @@
         }
 
         ul {
-          margin-bottom: 60px;
+          margin-bottom: 44px;
+          @include breakpoint(medium) {
+            margin-bottom: 60px;
+          }
 
           li {
             font-size: 16px;
@@ -159,8 +224,12 @@
 
           &.basic-information {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr;
+            margin-bottom: 24px;
+            @include breakpoint(medium) {
+              margin-bottom: 40px;
+              grid-template-columns: 1fr 1fr;
+            }
 
             li {
               margin: 0 0 20px 0;
@@ -191,6 +260,10 @@
           &.standard {
             display: flex;
             flex-wrap: wrap;
+            margin-bottom: 24px;
+            @include breakpoint(medium) {
+              margin-bottom: 40px;
+            }
 
             li {
               padding-left: 15px;
@@ -207,8 +280,12 @@
 
           &.ticks {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr;
+            margin-bottom: 24px;
+            @include breakpoint(medium) {
+              grid-template-columns: 1fr 1fr;
+              margin-bottom: 40px;
+            }
 
             li {
               margin: 0 0 20px 0;
@@ -225,6 +302,22 @@
           }
         }
       }
+    }
+  }
+
+  #offers {
+    .align-center {
+      padding-top: 60px;
+      @include breakpoint(medium) {
+        padding-top: 80px;
+      }
+    }
+  }
+
+  #footer {
+    margin-bottom: 80px;
+    @include breakpoint(medium) {
+      margin-bottom: 0;
     }
   }
 }
