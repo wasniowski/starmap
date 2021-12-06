@@ -4,41 +4,55 @@
 .about-us {
   #top {
     background: $color-background-gray;
-    position: relative;
-    padding: 110px 0 0 0;
-
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 120px;
-      background: $color-white;
+    padding: 60px 0 0 0;
+    @include breakpoint(medium) {
+      padding: 80px 0 0 0;
+    }
+    @include breakpoint(large) {
+      padding: 110px 0 0 0;
     }
 
     .wrapper {
       display: grid;
-      grid-template-columns: 1fr 400px;
+      grid-template-columns: 1fr;
+      @include breakpoint(medium) {
+        grid-template-columns: 1fr 400px;
+      }
 
       .text {
-        padding-right: 100px;
+        padding-bottom: 60px;
+        @include breakpoint(medium) {
+          padding-right: 100px;
+        }
 
         h2 {
+          font-size: 42px;
+          line-height: 1.3;
           font-weight: 500;
-          font-size: 72px;
-          line-height: 96px;
-          margin-left: -3px;
+          margin-left: -2px;
           margin-bottom: 20px;
+          @include breakpoint(medium) {
+            font-size: 56px;
+          }
+          @include breakpoint(large) {
+            font-size: 72px;
+            margin-left: -3px;
+          }
         }
 
         h4 {
-          font-size: 48px;
-          line-height: 72px;
+          font-size: 28px;
+          line-height: 1.5;
           font-weight: 400;
-          margin-left: -2px;
           margin-bottom: 20px;
+          @include breakpoint(medium) {
+            font-size: 36px;
+            margin-left: -1px;
+          }
+          @include breakpoint(large) {
+            font-size: 48px;
+            margin-left: -2px;
+          }
         }
 
         p {
@@ -47,24 +61,38 @@
         }
       }
 
-      .image-wrapper {
+      .image {
         position: relative;
-        z-index: 2;
-
-        .image-mask {
-          overflow: hidden;
+        .image-wrapper {
           position: relative;
+          overflow: hidden;
+          max-width: 400px;
+          margin: 0 auto;
 
-          &:after {
-            content: "";
-            display: block;
+          @include breakpoint(medium) {
             position: absolute;
-            bottom: -185px;
-            left: -100px;
-            width: 200%;
-            height: 200px;
-            background: $color-white;
-            transform: rotate(5deg);
+            top: 0;
+            left: 0;
+            width: 400px;
+          }
+
+          .image-mask {
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              bottom: -185px;
+              left: -100px;
+              width: 200%;
+              height: 200px;
+              background: $color-white;
+              transform: rotate(5deg);
+            }
+
+            img {
+              width: 100%;
+              height: auto;
+            }
           }
         }
       }
@@ -72,13 +100,25 @@
   }
 
   #about-us {
-    padding: 60px 0 0 0;
+    padding: 100px 0 0 0;
+    margin-top: -60px;
+    background: $color-white;
+    @include breakpoint(medium) {
+      margin-top: unset;
+      padding: 110px 0 0 0;
+    }
+    @include breakpoint(large) {
+      padding: 180px 0 0 0;
+    }
 
     .wrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       grid-column-gap: 40px;
       grid-row-gap: 60px;
+      @include breakpoint(medium) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     h2.title {
@@ -134,4 +174,3 @@
     }
   }
 }
-

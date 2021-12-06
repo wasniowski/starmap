@@ -1656,53 +1656,93 @@ select:hover {
 
 .about-us #top {
   background: #EBEBEB;
-  position: relative;
-  padding: 110px 0 0 0;
+  padding: 60px 0 0 0;
 }
-.about-us #top:after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: #ffffff;
+@media only screen and (min-width: 992px) {
+  .about-us #top {
+    padding: 80px 0 0 0;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .about-us #top {
+    padding: 110px 0 0 0;
+  }
 }
 .about-us #top .wrapper {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 992px) {
+  .about-us #top .wrapper {
+    grid-template-columns: 1fr 400px;
+  }
 }
 .about-us #top .wrapper .text {
-  padding-right: 100px;
+  padding-bottom: 60px;
+}
+@media only screen and (min-width: 992px) {
+  .about-us #top .wrapper .text {
+    padding-right: 100px;
+  }
 }
 .about-us #top .wrapper .text h2 {
+  font-size: 42px;
+  line-height: 1.3;
   font-weight: 500;
-  font-size: 72px;
-  line-height: 96px;
-  margin-left: -3px;
-  margin-bottom: 20px;
-}
-.about-us #top .wrapper .text h4 {
-  font-size: 48px;
-  line-height: 72px;
-  font-weight: 400;
   margin-left: -2px;
   margin-bottom: 20px;
+}
+@media only screen and (min-width: 992px) {
+  .about-us #top .wrapper .text h2 {
+    font-size: 56px;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .about-us #top .wrapper .text h2 {
+    font-size: 72px;
+    margin-left: -3px;
+  }
+}
+.about-us #top .wrapper .text h4 {
+  font-size: 28px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 992px) {
+  .about-us #top .wrapper .text h4 {
+    font-size: 36px;
+    margin-left: -1px;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .about-us #top .wrapper .text h4 {
+    font-size: 48px;
+    margin-left: -2px;
+  }
 }
 .about-us #top .wrapper .text p {
   font-size: 16px;
   line-height: 24px;
 }
-.about-us #top .wrapper .image-wrapper {
+.about-us #top .wrapper .image {
   position: relative;
-  z-index: 2;
 }
-.about-us #top .wrapper .image-wrapper .image-mask {
+.about-us #top .wrapper .image .image-wrapper {
+  position: relative;
   overflow: hidden;
-  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
 }
-.about-us #top .wrapper .image-wrapper .image-mask:after {
+@media only screen and (min-width: 992px) {
+  .about-us #top .wrapper .image .image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+  }
+}
+.about-us #top .wrapper .image .image-wrapper .image-mask:after {
   content: "";
   display: block;
   position: absolute;
@@ -1713,14 +1753,36 @@ select:hover {
   background: #ffffff;
   transform: rotate(5deg);
 }
+.about-us #top .wrapper .image .image-wrapper .image-mask img {
+  width: 100%;
+  height: auto;
+}
 .about-us #about-us {
-  padding: 60px 0 0 0;
+  padding: 100px 0 0 0;
+  margin-top: -60px;
+  background: #ffffff;
+}
+@media only screen and (min-width: 992px) {
+  .about-us #about-us {
+    margin-top: unset;
+    padding: 110px 0 0 0;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .about-us #about-us {
+    padding: 180px 0 0 0;
+  }
 }
 .about-us #about-us .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 40px;
   grid-row-gap: 60px;
+}
+@media only screen and (min-width: 992px) {
+  .about-us #about-us .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .about-us #about-us h2.title {
   margin-bottom: 60px;
