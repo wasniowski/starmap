@@ -1161,8 +1161,14 @@ select:hover {
 .offers #navigation .wrapper {
   background: #ffffff;
 }
-.offers #offers h2.title-smaller + table {
-  border-top: 1px solid #000000;
+.offers #offers .current-offers {
+  margin-bottom: 80px;
+}
+.offers #offers .current-offers .table-row:last-of-type {
+  border-bottom: none;
+}
+.offers #offers .closed-offers .table-header div {
+  display: none;
 }
 
 #offers {
@@ -1258,11 +1264,10 @@ select:hover {
     display: block;
     font-size: 12px;
     line-height: 16px;
-    font-weight: 500;
     padding: 0 10px 16px 0;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: #838FAC;
+    color: #1F5DFE;
   }
 }
 #offers .table-row {
@@ -1764,26 +1769,55 @@ select:hover {
 .references #top {
   background: #EBEBEB;
   position: relative;
-  padding: 60px 0 110px 0;
+  padding: 60px 0;
 }
-.references #top:before {
-  content: "";
-  display: block;
-  width: 633px;
-  height: 416px;
-  background: url("../images/references-line.svg") center center no-repeat;
-  position: absolute;
-  top: -120px;
-  left: calc(50% + 100px);
-  pointer-events: none;
+@media only screen and (min-width: 992px) {
+  .references #top {
+    padding: 60px 0 110px 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .references #top:before {
+    content: "";
+    display: block;
+    width: 419px;
+    height: 416px;
+    background: url("../images/references-line.svg") left center no-repeat;
+    position: absolute;
+    top: -120px;
+    right: 0;
+    pointer-events: none;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .references #top:before {
+    width: 633px;
+  }
+}
+@media only screen and (min-width: 1660px) {
+  .references #top:before {
+    width: 633px;
+    right: unset;
+    left: calc(50% + 100px);
+  }
 }
 .references #top .title {
-  padding-right: 50%;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
+}
+@media only screen and (min-width: 992px) {
+  .references #top .title {
+    padding-right: 50%;
+    margin-bottom: 70px;
+  }
 }
 .references #top .wrapper {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 992px) {
+  .references #top .wrapper {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 .references #top .wrapper p {
   font-size: 16px;
@@ -1794,9 +1828,22 @@ select:hover {
 }
 .references #top .wrapper h4 {
   font-weight: normal;
-  font-size: 28px;
-  line-height: 40px;
-  margin-bottom: 24px;
+  font-size: 21px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 992px) {
+  .references #top .wrapper h4 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .references #top .wrapper h4 {
+    font-size: 28px;
+    line-height: 40px;
+  }
 }
 .references #top .wrapper article {
   display: grid;
@@ -1804,37 +1851,76 @@ select:hover {
   grid-column-gap: 16px;
   margin-bottom: 40px;
 }
-.references #top .wrapper .col:first-of-type article {
-  max-width: 260px;
-  min-height: 48px;
+@media only screen and (min-width: 992px) {
+  .references #top .wrapper .col:first-of-type article {
+    max-width: 260px;
+    min-height: 48px;
+  }
 }
 .references #top .wrapper .inner-wrapper {
   display: grid;
-  grid-template-columns: 300px 300px;
+  grid-template-columns: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 40px;
 }
+@media only screen and (min-width: 768px) {
+  .references #top .wrapper .inner-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .references #top .wrapper .inner-wrapper {
+    grid-template-columns: 300px 300px;
+  }
+}
 .references #top .wrapper .inner-wrapper article {
-  max-width: 260px;
   margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  .references #top .wrapper .inner-wrapper article {
+    max-width: 260px;
+  }
 }
 .references #top .wrapper .inner-wrapper article h4 {
   margin-bottom: 8px;
 }
 .references #single-reference {
-  padding: 80px 0;
+  padding: 60px 0;
 }
-.references #single-reference .title {
-  padding-right: 40%;
-  margin-bottom: 24px;
+@media only screen and (min-width: 992px) {
+  .references #single-reference {
+    padding: 80px 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .references #single-reference .title {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .references #single-reference .title {
+    padding-right: 40%;
+  }
 }
 .references #single-reference .wrapper {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 768px) {
+  .references #single-reference .wrapper {
+    grid-template-columns: 240px 1fr;
+  }
 }
 .references #single-reference .wrapper .person {
-  padding: 60px 0;
-  background-image: linear-gradient(90deg, #ffffff 50%, #EBEBEB 50%);
+  padding: 30px 25px;
+  position: relative;
+  z-index: 2;
+}
+@media only screen and (min-width: 768px) {
+  .references #single-reference .wrapper .person {
+    padding: 60px 0;
+    background-image: linear-gradient(90deg, #ffffff 50%, #EBEBEB 50%);
+  }
 }
 .references #single-reference .wrapper .person .company-logo,
 .references #single-reference .wrapper .person .image {
@@ -1852,9 +1938,20 @@ select:hover {
 }
 .references #single-reference .wrapper .content {
   background: #EBEBEB;
-  column-count: 2;
-  column-gap: 70px;
-  padding: 60px 100px 60px 0;
+  padding: 120px 25px 25px 25px;
+  margin-top: -120px;
+}
+@media only screen and (min-width: 768px) {
+  .references #single-reference .wrapper .content {
+    margin-top: unset;
+    padding: 60px 100px 60px 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .references #single-reference .wrapper .content {
+    column-count: 2;
+    column-gap: 70px;
+  }
 }
 .references #single-reference .wrapper .content p {
   font-size: 14px;
@@ -1878,9 +1975,24 @@ select:hover {
 }
 .references #clients .wrapper {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
+}
+@media only screen and (min-width: 576px) {
+  .references #clients .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .references #clients .wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 992px) {
+  .references #clients .wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 .references #clients .wrapper article {
   aspect-ratio: 1;

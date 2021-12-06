@@ -5,28 +5,49 @@
   #top {
     background: $color-background-gray;
     position: relative;
-    padding: 60px 0 110px 0;
+    padding: 60px 0;
+    @include breakpoint(medium) {
+      padding: 60px 0 110px 0;
+    }
 
     &:before {
-      content: "";
-      display: block;
-      width: 633px;
-      height: 416px;
-      background: url("../images/references-line.svg") center center no-repeat;
-      position: absolute;
-      top: -120px;
-      left: calc(50% + 100px);
-      pointer-events: none;
+      @include breakpoint(medium) {
+        content: "";
+        display: block;
+        width: 419px;
+        height: 416px;
+        background: url("../images/references-line.svg") left center no-repeat;
+        position: absolute;
+        top: -120px;
+        right: 0;
+        pointer-events: none;
+      }
+      @include breakpoint(large) {
+        width: 633px;
+      }
+      @include breakpoint(xlarge) {
+        width: 633px;
+        right: unset;
+        left: calc(50% + 100px);
+      }
     }
 
     .title {
-      padding-right: 50%;
-      margin-bottom: 70px;
+      margin-bottom: 60px;
+      @include breakpoint(medium) {
+        padding-right: 50%;
+        margin-bottom: 70px;
+      }
     }
 
     .wrapper {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr;
+      @include breakpoint(medium) {
+        grid-template-columns: 1fr 2fr;
+      }
+      @include breakpoint(large) {
+      }
 
       p {
         font-size: 16px;
@@ -39,9 +60,18 @@
 
       h4 {
         font-weight: normal;
-        font-size: 28px;
-        line-height: 40px;
-        margin-bottom: 24px;
+        font-size: 21px;
+        line-height: 32px;
+        margin-bottom: 16px;
+        @include breakpoint(medium) {
+          font-size: 24px;
+          line-height: 32px;
+          margin-bottom: 24px;
+        }
+        @include breakpoint(large) {
+          font-size: 28px;
+          line-height: 40px;
+        }
       }
 
       article {
@@ -54,21 +84,31 @@
       .col {
         &:first-of-type {
           article {
-            max-width: 260px;
-            min-height: 48px;
+            @include breakpoint(medium) {
+              max-width: 260px;
+              min-height: 48px;
+            }
           }
         }
       }
 
       .inner-wrapper {
         display: grid;
-        grid-template-columns: 300px 300px;
+        grid-template-columns: 1fr;
         grid-column-gap: 20px;
         grid-row-gap: 40px;
+        @include breakpoint(small) {
+          grid-template-columns: 1fr 1fr;
+        }
+        @include breakpoint(medium) {
+          grid-template-columns: 300px 300px;
+        }
 
         article {
-          max-width: 260px;
           margin: 0;
+          @include breakpoint(small) {
+            max-width: 260px;
+          }
 
           h4 {
             margin-bottom: 8px;
@@ -79,20 +119,40 @@
   }
 
   #single-reference {
-    padding: 80px 0;
+    padding: 60px 0;
+    @include breakpoint(medium) {
+      padding: 80px 0;
+    }
 
     .title {
-      padding-right: 40%;
-      margin-bottom: 24px;
+      @include breakpoint(small) {
+        margin-bottom: 24px;
+      }
+      @include breakpoint(medium) {
+        padding-right: 40%;
+      }
     }
 
     .wrapper {
       display: grid;
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 1fr;
+      @include breakpoint(small) {
+        grid-template-columns: 240px 1fr;
+      }
 
       .person {
-        padding: 60px 0;
-        background-image: linear-gradient(90deg, $color-white 50%, $color-background-gray 50%);
+        padding: 30px 25px;
+        position: relative;
+        z-index: 2;
+        @include breakpoint(small) {
+          padding: 60px 0;
+          background-image: linear-gradient(
+            90deg,
+            $color-white 50%,
+            $color-background-gray 50%
+          );
+        }
+
         .company-logo,
         .image {
           margin-bottom: 10px;
@@ -113,9 +173,16 @@
 
       .content {
         background: $color-background-gray;
-        column-count: 2;
-        column-gap: 70px;
-        padding: 60px 100px 60px 0;
+        padding: 120px 25px 25px 25px;
+        margin-top: -120px;
+        @include breakpoint(small) {
+          margin-top: unset;
+          padding: 60px 100px 60px 0;
+        }
+        @include breakpoint(medium) {
+          column-count: 2;
+          column-gap: 70px;
+        }
 
         p {
           font-size: 14px;
@@ -131,7 +198,7 @@
       grid-row-gap: 110px;
     }
 
-    .align-center{
+    .align-center {
       margin-top: 80px;
     }
   }
@@ -146,9 +213,18 @@
 
     .wrapper {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       border-top: 1px solid $color-white;
       border-left: 1px solid $color-white;
+      @include breakpoint(xsmall) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include breakpoint(small) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include breakpoint(medium) {
+        grid-template-columns: repeat(5, 1fr);
+      }
 
       article {
         aspect-ratio: 1;

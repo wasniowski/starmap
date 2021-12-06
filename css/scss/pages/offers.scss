@@ -9,8 +9,20 @@
   }
 
   #offers {
-    h2.title-smaller + table {
-      border-top: 1px solid $color-black;
+    .current-offers {
+      margin-bottom: 80px;
+
+      .table-row {
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .closed-offers {
+      .table-header div {
+        display: none;
+      }
     }
   }
 }
@@ -103,11 +115,10 @@
         display: block;
         font-size: 12px;
         line-height: 16px;
-        font-weight: 500;
         padding: 0 10px 16px 0;
         letter-spacing: 0.07em;
         text-transform: uppercase;
-        color: $color-blue-secondary;
+        color: $color-blue-primary;
       }
     }
   }
