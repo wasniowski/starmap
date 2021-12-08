@@ -9,8 +9,47 @@
 
       // Scroll To Next Section
       scrollToNext.init();
+
+      slider.init();
     },
   };
+
+  var slider = {
+    init: function () {
+      let flip = $('#card').flip({
+        trigger: 'manual',
+        front: '.front-slide',
+        back: '.back-slide',
+        speed: 300
+      });
+      let isFlipped = false;
+
+      let imageUrl = $('.slider-images img').first().attr('src');
+      $('#slider .slide h4').first().parent().addClass('active');
+      $('#slider .front-slide').css('background-image', 'url('+imageUrl+')');
+
+      $('#slider .slide h4').each(function(index) {
+        $(this).click(function() {
+          if (!$(this).parent().hasClass('active')) {
+            $('#slider .slide').each(function (){
+              $(this).removeClass('active');
+            })
+            $(this).parent().addClass('active');
+            imageUrl = $('.slider-images img').eq(index).attr('src');
+            console.log(isFlipped)
+            if (isFlipped) {
+              $('#slider .front-slide').css('background-image', 'url('+imageUrl+')');
+            } else {
+              $('#slider .back-slide').css('background-image', 'url('+imageUrl+')');
+            }
+            flip.flip('toggle');
+            isFlipped = !isFlipped;
+          }
+        })
+      })
+
+    }
+  }
 
   /*
    * Enable Simple Switcher

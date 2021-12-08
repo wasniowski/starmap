@@ -2527,6 +2527,8 @@ p {
 }
 .homepage #slider .col:nth-of-type(3) {
   grid-area: image;
+  background: #EBEBEB;
+  overflow: hidden;
 }
 .homepage #slider .title {
   margin-top: 25px;
@@ -2571,39 +2573,64 @@ p {
   font-weight: 400;
   margin-bottom: 10px;
   color: #838FAC;
+  transition: all 0.35s;
+  cursor: pointer;
+}
+.homepage #slider .slides .slide .content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.35s;
 }
 .homepage #slider .slides .slide p {
-  display: none;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 25px;
 }
 .homepage #slider .slides .slide.active h4 {
   color: #191b1d;
+  cursor: default;
 }
-.homepage #slider .slides .slide.active p {
-  display: block;
+.homepage #slider .slides .slide.active .content {
+  max-height: 320px;
 }
 @media only screen and (min-width: 992px) {
-  .homepage #slider .images {
-    height: 600px;
-    overflow: hidden;
+  .homepage #slider .slides .slide.active .content {
+    max-height: 180px;
   }
 }
 @media only screen and (min-width: 1260px) {
-  .homepage #slider .images {
-    height: 720px;
+  .homepage #slider .slides .slide.active .content {
+    max-height: 160px;
   }
 }
-.homepage #slider .images .image img {
-  width: 100%;
-  height: auto;
+.homepage #slider #card {
+  aspect-ratio: 4/3;
 }
 @media only screen and (min-width: 992px) {
-  .homepage #slider .images .image img {
-    height: 720px;
-    width: auto;
+  .homepage #slider #card {
+    aspect-ratio: unset;
+    width: 50vw;
+    height: 600px;
   }
+}
+@media only screen and (min-width: 1260px) {
+  .homepage #slider #card {
+    height: 720px;
+  }
+}
+.homepage #slider #card .front-slide,
+.homepage #slider #card .back-slide {
+  background-size: cover;
+  background-position: center center;
+}
+.homepage #slider #card .front-slide {
+  background: red;
+}
+.homepage #slider #card .back-slide {
+  background: green;
+}
+.homepage #slider .slider-images {
+  display: none;
 }
 .homepage #testimonials {
   padding: 60px 0;

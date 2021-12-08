@@ -364,6 +364,8 @@ p {
 
       &:nth-of-type(3) {
         grid-area: image;
+        background: $color-background-gray;
+        overflow: hidden;
       }
     }
 
@@ -402,10 +404,17 @@ p {
           font-weight: 400;
           margin-bottom: 10px;
           color: $color-blue-secondary;
+          transition: all .35s;
+          cursor: pointer;
+        }
+
+        .content {
+          max-height: 0px;
+          overflow: hidden;
+          transition: all .35s;
         }
 
         p {
-          display: none;
           font-size: 16px;
           line-height: 24px;
           margin-bottom: 25px;
@@ -414,34 +423,50 @@ p {
         &.active {
           h4 {
             color: $text-color-dark;
+            cursor: default;
           }
 
-          p {
-            display: block;
+          .content {
+            max-height: 320px;
+            @include breakpoint(medium) {
+              max-height: 180px;
+            }
+            @include breakpoint(large) {
+              max-height: 160px;
+            }
           }
         }
       }
     }
 
-    .images {
+    #card {
+      aspect-ratio: 4 / 3;
       @include breakpoint(medium) {
+        aspect-ratio: unset;
+        width: 50vw;
         height: 600px;
-        overflow: hidden;
       }
       @include breakpoint(large) {
         height: 720px;
       }
 
-      .image {
-        img {
-          width: 100%;
-          height: auto;
-          @include breakpoint(medium) {
-            height: 720px;
-            width: auto;
-          }
-        }
+      .front-slide,
+      .back-slide {
+        background-size: cover;
+        background-position: center center;
       }
+
+      .front-slide {
+        background: red;
+      }
+
+      .back-slide {
+        background: green;
+      }
+    }
+
+    .slider-images {
+      display: none;
     }
   }
 

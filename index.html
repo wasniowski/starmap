@@ -102,25 +102,30 @@
         </div>
         <div class="col">
           <div class="slides">
-            <div class="slide active">
-              <h4>Understanding</h4>
+            <div class="slide">
+              <h4 data-slide-id="1">Understanding</h4>
+              <div class="content">
               <p>
                 Our headhunters have work in the fields we focus on and quite
                 often in the same position. So we understand what skillsets the
                 job needs, what requirements field has for the employee and what
                 attracts them to the job.
               </p>
+              </div>
             </div>
             <div class="slide">
-              <h4>Consistency</h4>
+              <h4 data-slide-id="2">Consistency</h4>
+              <div class="content">
               <p>
                 We have one mediator for the whole recruitment process to scout
                 and verify the candidates and especially to communicate with all
                 parties involved with the process.
               </p>
+              </div>
             </div>
             <div class="slide">
-              <h4>Quality</h4>
+              <h4 data-slide-id="3">Quality</h4>
+              <div class="content">
               <p>
                 We stand as your representatives when hunting your next talents.
                 We take great pride in being your brand ambassadors in headhunt.
@@ -129,16 +134,25 @@
                 is of quality; invested and professional. We leave even those
                 not chosen smiling for the opportunity.
               </p>
+              </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="images">
-            <div class="image">
-              <img src="images/slide1.jpg" />
+          <div id="card">
+            <div class="front-slide">
+
+            </div>
+            <div class="back-slide">
+
             </div>
           </div>
         </div>
+      </div>
+      <div class="slider-images">
+        <img src="images/slide1.jpg" data-image-id="1"/>
+        <img src="images/slide2.jpg" data-image-id="2"/>
+        <img src="images/slide3.jpg" data-image-id="3"/>
       </div>
     </section>
 
@@ -332,6 +346,8 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+
+    <script src="scripts/jquery.flip.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
